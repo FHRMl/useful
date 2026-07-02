@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}个人主页 - {{ app_name }}{% endblock %}
+
+{% block content %}
+<section class="page-head compact">
+  <div>
+    <p class="eyebrow">个人主页</p>
+    <h1>{{ current_user.display_name }}</h1>
+  </div>
+</section>
+
+<section class="two-column">
+  <div>
+    <h2 class="section-title">课程点评</h2>
+    <div class="item-list">
+      {% for review in reviews %}
+        <article class="list-item">
+          <div class="item-title">{{ course_names.get(review.course_id, review.course_id) }}</div>
+          <div class="stars">{{ "★" * review.rating }}{{ "☆" * (5 - review.rating) }}</div>
+          <p>{{ review.comment }}</p>
+        </article>
+      {% else %}
+        <p class="empty">暂无点评。</p>
+      {% endfor %}
+    </div>
+  </div>
+  <div>
+    <h2 class="section-title">知识点标注</h2>
+    <div class="item-list">
+      {% for annotation in annotations %}
+        <article class="list-item">
+          <div class="item-title">{{ knowledge_names.get(annotation.knowledge_id, annotation.knowledge_id) }}</div>
+          <p>{{ annotation.note }}</p>
+          <span class="tag">{{ "公开" if annotation.visibility == "public" else "私有" }}</span>
+        </article>
+      {% else %}
+        <p class="empty">暂无标注。</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
+

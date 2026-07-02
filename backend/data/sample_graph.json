@@ -1,0 +1,496 @@
+{
+  "courses": [
+    {
+      "id": "COURSE_INFO_ORGANIZATION",
+      "name": "信息组织",
+      "code": "07000030A",
+      "credits": 3,
+      "course_type": "平台/菜单",
+      "summary": "围绕分类法、主题词表、元数据和本体组织信息资源。",
+      "source": "南京大学信息管理学院公开课表与课程作业整理",
+      "clc": {
+        "code": "G254",
+        "name": "文献标引与编目"
+      },
+      "dimensions": [
+        {
+          "dimension": "文化",
+          "value": "知识组织文化"
+        },
+        {
+          "dimension": "机构",
+          "value": "图书馆与知识服务机构"
+        },
+        {
+          "dimension": "个人",
+          "value": "知识组织员"
+        },
+        {
+          "dimension": "计算",
+          "value": "本体与知识图谱"
+        }
+      ],
+      "knowledge_ids": [
+        "KP_KNOWLEDGE_ORGANIZATION",
+        "KP_THESAURUS",
+        "KP_SUBJECT_INDEXING",
+        "KP_CLASSIFICATION",
+        "KP_METADATA",
+        "KP_ONTOLOGY"
+      ]
+    },
+    {
+      "id": "COURSE_INFO_RETRIEVAL",
+      "name": "信息检索",
+      "code": "",
+      "credits": 3,
+      "course_type": "菜单",
+      "summary": "讨论用户需求、检索表达、搜索引擎和相关性排序。",
+      "source": "南京大学信息管理学院公开课表与课程作业整理",
+      "clc": {
+        "code": "G252.7",
+        "name": "情报检索"
+      },
+      "dimensions": [
+        {
+          "dimension": "文化",
+          "value": "信息素养文化"
+        },
+        {
+          "dimension": "机构",
+          "value": "数字图书馆平台"
+        },
+        {
+          "dimension": "个人",
+          "value": "信息用户"
+        },
+        {
+          "dimension": "计算",
+          "value": "搜索与排序算法"
+        }
+      ],
+      "knowledge_ids": [
+        "KP_INFORMATION_RETRIEVAL",
+        "KP_SEARCH_ENGINE",
+        "KP_BOOLEAN_RETRIEVAL",
+        "KP_RELEVANCE_RANKING",
+        "KP_USER_NEED",
+        "KP_THESAURUS"
+      ]
+    },
+    {
+      "id": "COURSE_DATA_STRUCTURE",
+      "name": "数据结构",
+      "code": "07020020",
+      "credits": 3,
+      "course_type": "核心",
+      "summary": "学习抽象数据类型、线性结构、树、图和算法复杂度。",
+      "source": "南京大学信息管理学院公开课表与课程作业整理",
+      "clc": {
+        "code": "TP311.12",
+        "name": "数据结构"
+      },
+      "dimensions": [
+        {
+          "dimension": "文化",
+          "value": "计算思维文化"
+        },
+        {
+          "dimension": "机构",
+          "value": "软件研发组织"
+        },
+        {
+          "dimension": "个人",
+          "value": "系统开发者"
+        },
+        {
+          "dimension": "计算",
+          "value": "数据结构与算法"
+        }
+      ],
+      "knowledge_ids": [
+        "KP_ABSTRACT_DATA_TYPE",
+        "KP_LINEAR_LIST",
+        "KP_TREE_STRUCTURE",
+        "KP_GRAPH_STRUCTURE",
+        "KP_ALGORITHM_COMPLEXITY"
+      ]
+    },
+    {
+      "id": "COURSE_DATA_SCIENCE",
+      "name": "数据科学与数据分析",
+      "code": "07020460",
+      "credits": 6,
+      "course_type": "核心",
+      "summary": "围绕数据清洗、统计分析、建模、机器学习和可视化展开。",
+      "source": "南京大学信息管理学院公开课表与课程作业整理",
+      "clc": {
+        "code": "TP274",
+        "name": "数据处理"
+      },
+      "dimensions": [
+        {
+          "dimension": "文化",
+          "value": "数据驱动文化"
+        },
+        {
+          "dimension": "机构",
+          "value": "数据分析部门"
+        },
+        {
+          "dimension": "个人",
+          "value": "数据分析师"
+        },
+        {
+          "dimension": "计算",
+          "value": "机器学习与分析"
+        }
+      ],
+      "knowledge_ids": [
+        "KP_DATA_CLEANING",
+        "KP_DATA_MODELING",
+        "KP_MACHINE_LEARNING",
+        "KP_STATISTICAL_ANALYSIS",
+        "KP_DATA_VISUALIZATION"
+      ]
+    },
+    {
+      "id": "COURSE_MIS",
+      "name": "管理信息系统",
+      "code": "07020480",
+      "credits": 3,
+      "course_type": "核心",
+      "summary": "从管理流程、系统分析、数据库和决策支持理解组织中的信息系统。",
+      "source": "南京大学信息管理学院公开课表与课程作业整理",
+      "clc": {
+        "code": "C931.6",
+        "name": "管理信息系统"
+      },
+      "dimensions": [
+        {
+          "dimension": "文化",
+          "value": "组织管理文化"
+        },
+        {
+          "dimension": "机构",
+          "value": "企业信息部门"
+        },
+        {
+          "dimension": "个人",
+          "value": "系统分析师"
+        },
+        {
+          "dimension": "计算",
+          "value": "数据库与业务系统"
+        }
+      ],
+      "knowledge_ids": [
+        "KP_INFORMATION_SYSTEM",
+        "KP_BUSINESS_PROCESS",
+        "KP_SYSTEM_ANALYSIS",
+        "KP_DATABASE",
+        "KP_DECISION_SUPPORT",
+        "KP_METADATA"
+      ]
+    },
+    {
+      "id": "COURSE_INFO_ANALYSIS",
+      "name": "信息分析",
+      "code": "07000050",
+      "credits": 3,
+      "course_type": "平台",
+      "summary": "面向文本、舆情、指标体系和统计方法组织分析流程。",
+      "source": "南京大学信息管理学院公开课表与课程作业整理",
+      "clc": {
+        "code": "G350",
+        "name": "情报学"
+      },
+      "dimensions": [
+        {
+          "dimension": "文化",
+          "value": "证据推理文化"
+        },
+        {
+          "dimension": "机构",
+          "value": "情报分析机构"
+        },
+        {
+          "dimension": "个人",
+          "value": "信息分析师"
+        },
+        {
+          "dimension": "计算",
+          "value": "文本挖掘与可视化"
+        }
+      ],
+      "knowledge_ids": [
+        "KP_INFORMATION_ANALYSIS",
+        "KP_TEXT_MINING",
+        "KP_PUBLIC_OPINION",
+        "KP_INDICATOR_SYSTEM",
+        "KP_STATISTICAL_ANALYSIS",
+        "KP_DATA_VISUALIZATION"
+      ]
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "KP_KNOWLEDGE_ORGANIZATION",
+      "name": "知识组织",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_THESAURUS",
+      "name": "主题词表",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_SUBJECT_INDEXING",
+      "name": "主题标引",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_CLASSIFICATION",
+      "name": "分类法",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_METADATA",
+      "name": "元数据",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_ONTOLOGY",
+      "name": "本体",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_INFORMATION_RETRIEVAL",
+      "name": "信息检索",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_SEARCH_ENGINE",
+      "name": "搜索引擎",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_BOOLEAN_RETRIEVAL",
+      "name": "布尔检索",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_RELEVANCE_RANKING",
+      "name": "相关性排序",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_USER_NEED",
+      "name": "信息需求",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_ABSTRACT_DATA_TYPE",
+      "name": "抽象数据类型",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_LINEAR_LIST",
+      "name": "线性表",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_TREE_STRUCTURE",
+      "name": "树结构",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_GRAPH_STRUCTURE",
+      "name": "图结构",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_ALGORITHM_COMPLEXITY",
+      "name": "算法复杂度",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_DATA_CLEANING",
+      "name": "数据清洗",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_DATA_MODELING",
+      "name": "数据建模",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_MACHINE_LEARNING",
+      "name": "机器学习",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_STATISTICAL_ANALYSIS",
+      "name": "统计分析",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_DATA_VISUALIZATION",
+      "name": "数据可视化",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_INFORMATION_SYSTEM",
+      "name": "信息系统",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_BUSINESS_PROCESS",
+      "name": "业务流程",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_SYSTEM_ANALYSIS",
+      "name": "系统分析",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_DATABASE",
+      "name": "数据库",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_DECISION_SUPPORT",
+      "name": "决策支持",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_INFORMATION_ANALYSIS",
+      "name": "信息分析",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_TEXT_MINING",
+      "name": "文本挖掘",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_PUBLIC_OPINION",
+      "name": "网络舆情",
+      "source": "《汉语主题词表》主题词粒度整理"
+    },
+    {
+      "id": "KP_INDICATOR_SYSTEM",
+      "name": "指标体系",
+      "source": "《汉语主题词表》主题词粒度整理"
+    }
+  ],
+  "knowledge_relations": [
+    {
+      "source": "KP_KNOWLEDGE_ORGANIZATION",
+      "target": "KP_THESAURUS",
+      "relation": "下位词"
+    },
+    {
+      "source": "KP_KNOWLEDGE_ORGANIZATION",
+      "target": "KP_CLASSIFICATION",
+      "relation": "下位词"
+    },
+    {
+      "source": "KP_KNOWLEDGE_ORGANIZATION",
+      "target": "KP_METADATA",
+      "relation": "相关词"
+    },
+    {
+      "source": "KP_KNOWLEDGE_ORGANIZATION",
+      "target": "KP_ONTOLOGY",
+      "relation": "相关词"
+    },
+    {
+      "source": "KP_THESAURUS",
+      "target": "KP_SUBJECT_INDEXING",
+      "relation": "相关词"
+    },
+    {
+      "source": "KP_INFORMATION_RETRIEVAL",
+      "target": "KP_BOOLEAN_RETRIEVAL",
+      "relation": "下位词"
+    },
+    {
+      "source": "KP_INFORMATION_RETRIEVAL",
+      "target": "KP_RELEVANCE_RANKING",
+      "relation": "相关词"
+    },
+    {
+      "source": "KP_INFORMATION_RETRIEVAL",
+      "target": "KP_USER_NEED",
+      "relation": "相关词"
+    },
+    {
+      "source": "KP_SEARCH_ENGINE",
+      "target": "KP_RELEVANCE_RANKING",
+      "relation": "相关词"
+    },
+    {
+      "source": "KP_ABSTRACT_DATA_TYPE",
+      "target": "KP_LINEAR_LIST",
+      "relation": "下位词"
+    },
+    {
+      "source": "KP_ABSTRACT_DATA_TYPE",
+      "target": "KP_TREE_STRUCTURE",
+      "relation": "下位词"
+    },
+    {
+      "source": "KP_ABSTRACT_DATA_TYPE",
+      "target": "KP_GRAPH_STRUCTURE",
+      "relation": "下位词"
+    },
+    {
+      "source": "KP_GRAPH_STRUCTURE",
+      "target": "KP_ONTOLOGY",
+      "relation": "相关词"
+    },
+    {
+      "source": "KP_DATA_MODELING",
+      "target": "KP_MACHINE_LEARNING",
+      "relation": "相关词"
+    },
+    {
+      "source": "KP_STATISTICAL_ANALYSIS",
+      "target": "KP_DATA_VISUALIZATION",
+      "relation": "相关词"
+    },
+    {
+      "source": "KP_INFORMATION_SYSTEM",
+      "target": "KP_DATABASE",
+      "relation": "组成部分"
+    },
+    {
+      "source": "KP_INFORMATION_SYSTEM",
+      "target": "KP_BUSINESS_PROCESS",
+      "relation": "相关词"
+    },
+    {
+      "source": "KP_SYSTEM_ANALYSIS",
+      "target": "KP_BUSINESS_PROCESS",
+      "relation": "相关词"
+    },
+    {
+      "source": "KP_INFORMATION_ANALYSIS",
+      "target": "KP_TEXT_MINING",
+      "relation": "下位词"
+    },
+    {
+      "source": "KP_INFORMATION_ANALYSIS",
+      "target": "KP_INDICATOR_SYSTEM",
+      "relation": "相关词"
+    },
+    {
+      "source": "KP_TEXT_MINING",
+      "target": "KP_PUBLIC_OPINION",
+      "relation": "应用领域"
+    }
+  ]
+}
+

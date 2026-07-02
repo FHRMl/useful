@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}分析展示 - {{ app_name }}{% endblock %}
+
+{% block content %}
+<section class="page-head compact">
+  <div>
+    <p class="eyebrow">Analysis</p>
+    <h1>分析展示</h1>
+    <p class="lead">{{ graph_analysis.node_count }} 个节点，{{ graph_analysis.link_count }} 条关系。</p>
+  </div>
+</section>
+
+<section class="analysis-grid">
+  <article class="analysis-panel">
+    <h2>度数最高的知识点</h2>
+    <ol class="rank-list">
+      {% for item in graph_analysis.top_knowledge %}
+        <li>
+          <span>{{ item.name }}</span>
+          <strong>{{ item.degree }}</strong>
+        </li>
+      {% endfor %}
+    </ol>
+  </article>
+
+  <article class="analysis-panel">
+    <h2>共享知识点最多的课程</h2>
+    <div class="item-list">
+      {% for pair in graph_analysis.shared_pairs %}
+        <div class="list-item">
+          <div class="item-title">{{ pair.left }} × {{ pair.right }}</div>
+          <p>{{ pair.count }} 个共享知识点：{{ pair.knowledge | join("、") }}</p>
+        </div>
+      {% else %}
+        <p class="empty">暂无共享知识点。</p>
+      {% endfor %}
+    </div>
+  </article>
+
+  <article class="analysis-panel">
+    <h2>课程评分排行</h2>
+    <ol class="rank-list">
+      {% for item in review_ranking %}
+        <li>
+          <span>{{ item.course }}</span>
+          <strong>{{ item.avg }} / {{ item.count }} 条</strong>
+        </li>
+      {% else %}
+        <li><span>暂无评分数据</span><strong>-</strong></li>
+      {% endfor %}
+    </ol>
+  </article>
+
+  <article class="analysis-panel">
+    <h2>四类维度分布</h2>
+    {% for dimension, rows in graph_analysis.dimension_counts.items() %}
+      <h3>{{ dimension }}</h3>
+      <div class="tag-row">
+        {% for row in rows %}
+          <span class="tag">{{ row.name }} · {{ row.count }}</span>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </article>
+</section>
+{% endblock %}
+

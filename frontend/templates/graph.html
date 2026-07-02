@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}知识图谱 - {{ app_name }}{% endblock %}
+{% block head %}
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<section class="page-head compact">
+  <div>
+    <p class="eyebrow">Graph View</p>
+    <h1>知识图谱可视化</h1>
+  </div>
+  <form class="search-box" id="graphSearch">
+    <input name="q" placeholder="搜索课程、知识点、分类号">
+    <button class="button" type="submit">搜索</button>
+  </form>
+</section>
+
+<section class="graph-layout">
+  <div id="graphChart" class="graph-chart"></div>
+  <aside class="graph-side">
+    <h2>节点信息</h2>
+    <div id="nodeInfo" class="node-info">选择图谱节点后显示详情。</div>
+  </aside>
+</section>
+
+<script src="{{ url_for('static', filename='js/graph.js') }}"></script>
+{% endblock %}
+

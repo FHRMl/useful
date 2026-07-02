@@ -1,0 +1,32 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: coursekg-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: coursekg
+      MYSQL_USER: coursekg
+      MYSQL_PASSWORD: coursekg
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+    command: ["mysqld", "--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci"]
+
+  neo4j:
+    image: neo4j:5.22-community
+    container_name: coursekg-neo4j
+    environment:
+      NEO4J_AUTH: neo4j/coursekg2026
+      NEO4J_dbms_security_procedures_unrestricted: ""
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - neo4j_data:/data
+
+volumes:
+  mysql_data:
+  neo4j_data:
+

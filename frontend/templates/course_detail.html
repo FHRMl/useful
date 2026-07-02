@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %}{{ course.name }} - {{ app_name }}{% endblock %}
+
+{% block content %}
+<section class="page-head course-head">
+  <div>
+    <p class="eyebrow">{{ course.course_type or "课程" }} · {{ course.credits }} 学分</p>
+    <h1>{{ course.name }}</h1>
+    <p class="lead">{{ course.summary }}</p>
+  </div>
+  <dl class="side-facts">
+    <div>
+      <dt>课程号</dt>
+      <dd>{{ course.code or "未公开" }}</dd>
+    </div>
+    <div>
+      <dt>中图法</dt>
+      <dd>{{ course.clc.code }} {{ course.clc.name }}</dd>
+    </div>
+  </dl>
+</section>
+
+<section class="dimension-strip">
+  {% for dimension in course.dimensions %}
+    <div>
+      <span>{{ dimension.dimension }}</span>
+      <strong>{{ dimension.value }}</strong>
+    </div>
+  {% endfor %}
+</section>
+
+<section class="two-column wide-left">
+  <div>
+    <h2 class="section-title">知识点</h2>
+    <div class="knowledge-list">
+      {% for point in course.knowledge_points %}
+        <article class="knowledge-card">
+          <div class="item-title">{{ point.name }}</div>
+          <p class="muted">{{ point.source }}</p>
+          {% if current_user.is_authenticated %}
+            <form method="post" class="annotation-form">
+              <input type="hidden" name="form_type" value="annotation">
+              <input type="hidden" name="knowledge_id" value="{{ point.id }}">
+              <textarea name="note" rows="2" placeholder="添加个人标注" required></textarea>
+              <div class="inline-actions">
+                <select name="visibility">
+                  <option value="private">私有</option>
+                  <option value="public">公开</option>
+                </select>
+                <button class="button button-small" type="submit">保存标注</button>
+              </div>
+            </form>
+          {% endif %}
+          {% for annotation in annotations.get(point.id, []) %}
+            <div class="annotation">
+              <span>{{ annotation.user.display_name }}</span>
+              <p>{{ annotation.note }}</p>
+            </div>
+          {% endfor %}
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+
+  <aside>
+    <h2 class="section-title">课程点评</h2>
+    {% if current_user.is_authenticated %}
+      <form method="post" class="review-form">
+        <input type="hidden" name="form_type" value="review">
+        <label>
+          评分
+          <select name="rating">
+            <option value="5">5 分</option>
+            <option value="4">4 分</option>
+            <option value="3">3 分</option>
+            <option value="2">2 分</option>
+            <option value="1">1 分</option>
+          </select>
+        </label>
+        <label>
+          点评
+          <textarea name="comment" rows="4" required></textarea>
+        </label>
+        <button class="button button-primary" type="submit">提交点评</button>
+      </form>
+    {% else %}
+      <p class="muted"><a href="{{ url_for('login', next=request.path) }}">登录</a> 后可评分和点评。</p>
+    {% endif %}
+
+    <div class="item-list review-list">
+      {% for review in reviews %}
+        <article class="list-item">
+          <div class="item-title">{{ review.user.display_name }}</div>
+          <div class="stars">{{ "★" * review.rating }}{{ "☆" * (5 - review.rating) }}</div>
+          <p>{{ review.comment }}</p>
+        </article>
+      {% else %}
+        <p class="empty">暂无点评。</p>
+      {% endfor %}
+    </div>
+  </aside>
+</section>
+{% endblock %}
+

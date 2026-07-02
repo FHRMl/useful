@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:ckg="http://example.org/course-kg#"
+    xml:base="http://example.org/course-kg">
+
+  <owl:Ontology rdf:about="http://example.org/course-kg">
+    <rdfs:label xml:lang="zh-CN">课程知识图谱社区系统本体</rdfs:label>
+    <rdfs:comment xml:lang="zh-CN">用于描述课程、知识点、中图法分类、四类分类维度和用户动态数据的课程作业本体。</rdfs:comment>
+  </owl:Ontology>
+
+  <owl:Class rdf:about="ckg:Course">
+    <rdfs:label xml:lang="zh-CN">课程</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="ckg:KnowledgePoint">
+    <rdfs:label xml:lang="zh-CN">知识点</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="ckg:CLCClass">
+    <rdfs:label xml:lang="zh-CN">中图法分类</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="ckg:DimensionValue">
+    <rdfs:label xml:lang="zh-CN">分类维度取值</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="ckg:CulturalDimension">
+    <rdfs:subClassOf rdf:resource="ckg:DimensionValue"/>
+    <rdfs:label xml:lang="zh-CN">文化维度</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="ckg:InstitutionalDimension">
+    <rdfs:subClassOf rdf:resource="ckg:DimensionValue"/>
+    <rdfs:label xml:lang="zh-CN">机构维度</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="ckg:PersonalDimension">
+    <rdfs:subClassOf rdf:resource="ckg:DimensionValue"/>
+    <rdfs:label xml:lang="zh-CN">个人维度</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="ckg:ComputationalDimension">
+    <rdfs:subClassOf rdf:resource="ckg:DimensionValue"/>
+    <rdfs:label xml:lang="zh-CN">计算维度</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="ckg:User">
+    <rdfs:label xml:lang="zh-CN">用户</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="ckg:CourseReview">
+    <rdfs:label xml:lang="zh-CN">课程评价</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="ckg:KnowledgeAnnotation">
+    <rdfs:label xml:lang="zh-CN">知识点标注</rdfs:label>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="ckg:hasKnowledgePoint">
+    <rdfs:domain rdf:resource="ckg:Course"/>
+    <rdfs:range rdf:resource="ckg:KnowledgePoint"/>
+    <rdfs:label xml:lang="zh-CN">包含知识点</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="ckg:classifiedBy">
+    <rdfs:domain rdf:resource="ckg:Course"/>
+    <rdfs:range rdf:resource="ckg:CLCClass"/>
+    <rdfs:label xml:lang="zh-CN">中图法分类</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="ckg:hasDimensionValue">
+    <rdfs:domain rdf:resource="ckg:Course"/>
+    <rdfs:range rdf:resource="ckg:DimensionValue"/>
+    <rdfs:label xml:lang="zh-CN">具有分类维度</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="ckg:broaderThan">
+    <rdfs:domain rdf:resource="ckg:KnowledgePoint"/>
+    <rdfs:range rdf:resource="ckg:KnowledgePoint"/>
+    <rdfs:label xml:lang="zh-CN">上位/下位关系</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="ckg:relatedTo">
+    <rdfs:domain rdf:resource="ckg:KnowledgePoint"/>
+    <rdfs:range rdf:resource="ckg:KnowledgePoint"/>
+    <rdfs:label xml:lang="zh-CN">相关关系</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="ckg:reviewsCourse">
+    <rdfs:domain rdf:resource="ckg:CourseReview"/>
+    <rdfs:range rdf:resource="ckg:Course"/>
+    <rdfs:label xml:lang="zh-CN">评价课程</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="ckg:annotatesKnowledgePoint">
+    <rdfs:domain rdf:resource="ckg:KnowledgeAnnotation"/>
+    <rdfs:range rdf:resource="ckg:KnowledgePoint"/>
+    <rdfs:label xml:lang="zh-CN">标注知识点</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="ckg:name">
+    <rdfs:range rdf:resource="xsd:string"/>
+    <rdfs:label xml:lang="zh-CN">名称</rdfs:label>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="ckg:courseCode">
+    <rdfs:domain rdf:resource="ckg:Course"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <rdfs:label xml:lang="zh-CN">课程号</rdfs:label>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="ckg:credits">
+    <rdfs:domain rdf:resource="ckg:Course"/>
+    <rdfs:range rdf:resource="xsd:decimal"/>
+    <rdfs:label xml:lang="zh-CN">学分</rdfs:label>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="ckg:rating">
+    <rdfs:domain rdf:resource="ckg:CourseReview"/>
+    <rdfs:range rdf:resource="xsd:integer"/>
+    <rdfs:label xml:lang="zh-CN">评分</rdfs:label>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="ckg:comment">
+    <rdfs:range rdf:resource="xsd:string"/>
+    <rdfs:label xml:lang="zh-CN">文本内容</rdfs:label>
+  </owl:DatatypeProperty>
+</rdf:RDF>
+

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}课程列表 - {{ app_name }}{% endblock %}
+
+{% block content %}
+<section class="page-head">
+  <div>
+    <p class="eyebrow">NJU 信息管理学院课程样例</p>
+    <h1>课程知识图谱社区</h1>
+    <p class="lead">以课程、知识点、主题词关系和分类维度组织信息资源，支持用户评分、点评和个人知识点标注。</p>
+  </div>
+</section>
+
+<section class="course-grid">
+  {% for course in courses %}
+    {% set stat = stats.get(course.id) %}
+    <article class="course-card">
+      <div class="card-meta">
+        <span>{{ course.course_type or "课程" }}</span>
+        <span>{{ course.credits }} 学分</span>
+      </div>
+      <h2>{{ course.name }}</h2>
+      <p>{{ course.summary }}</p>
+      <dl class="fact-row">
+        <div>
+          <dt>知识点</dt>
+          <dd>{{ course.kp_count }}</dd>
+        </div>
+        <div>
+          <dt>分类号</dt>
+          <dd>{{ course.clc.code }}</dd>
+        </div>
+        <div>
+          <dt>评分</dt>
+          <dd>{% if stat %}{{ stat.avg }}{% else %}-{% endif %}</dd>
+        </div>
+      </dl>
+      <a class="button" href="{{ url_for('course_detail', course_id=course.id) }}">查看课程</a>
+    </article>
+  {% endfor %}
+</section>
+{% endblock %}
+
